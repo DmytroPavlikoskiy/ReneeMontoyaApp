@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/select.css" rel="stylesheet">
+    <title>Selected Employee</title>
+</head>
+<body>
+<div class="menu">
+    <a href="/Home">Home</a>
+    <a href="/Employees">Add Employees</a>
+    <a href="/EmployeePost">All Employee</a>
+</div>
+    <p>{{ employee.name }}</p>
+    <p>{{ employee.email }}</p>
+    <p>{{ employee.department_type }}</p>
+    <p>{{ employee.department_id }}</p>
+    <div class="buto">
+        <a class="lol" href="/Employees/{{ employee.id }}/update">Update</a>
+        <a class="lol" href="/EmployeePost/{{ employee.id }}/delete">Delete</a>
+    </div>
+</div>
+</body>
+</html>

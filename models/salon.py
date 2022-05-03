@@ -1,20 +1,11 @@
-from framework.models import Model
+from framework.models import Salon
+from api import app, api, db
+from flask_restful import Resource
+from flask import request
+from utils.helpers import convert_list
 
-class Salon(Model):
-    table = 'salon'
+class PlantResource(Resource):
 
-    def __init__(self, id, location, name, name_salon):
-        self.id = id
-        self.location = location
-        self.name = name
-        self.name_salon = name_salon
-
-    def save(self):
-        cursor = self.connects()
-        sql = 'INSERT INTO salon(id, location, name, name_salon)' \
-              ' VALUES ("%s", "%s", "%s", "%s")' % (str(self.id), self.location, self.name, self.name_salon)
-        try:
-            cursor.execute(sql)
-            self.conn.commit()
-        except:
-            self.conn.rollback()
+    def get(self):
+        salons = Salon.query.all()
+        return convert_list(salons)

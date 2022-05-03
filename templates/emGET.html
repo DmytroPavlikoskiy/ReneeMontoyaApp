@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="static/css/emget.css" rel="stylesheet">
+    <title>EmployeesPost</title>
+</head>
+<body>
+<div class="menu">
+    <a href="/Home">Home</a>
+    <a href="/Employees">Add Employees</a>
+    <a href="/EmployeePost">All Employee</a>
+</div>
+<div class="conteiner mt-5">
+    {% for el in employee %}
+    <div class="alert-alert-info">
+        <a class="bord" href="/EmployeePost/{{ el.id }}/{{ el.name }}/selected">{{ el.name }}</a>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>

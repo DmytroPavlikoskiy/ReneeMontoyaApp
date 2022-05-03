@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/update.css" rel="stylesheet">
+    <title>EmployeesPost</title>
+</head>
+<body>
+<h1>Update Employee</h1>
+<div class="control">
+    <form method="POST">
+        <div class="menu">
+            <p><input class="name" type="text" name="name" value="{{ employee.name }}" placeholder="Add Name: "></p>
+            <p><input class="email" type="email" name="email" value="{{ employee.email }}" placeholder="Add mail: "></p>
+            <p><input class="dep_t" name="department_type" value="{{ employee.department_type }}" placeholder="Add Department: "></p>
+            <p><input class="dep_i" type="text" name="department_id" value="{{ employee.department_id }}" placeholder="Department id:"></p>
+            <input class=" bt, btm-success" type="submit" value="Update">
+        </div>
+    </form>
+</div>
+</body>

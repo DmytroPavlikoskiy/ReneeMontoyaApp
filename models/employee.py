@@ -1,22 +1,40 @@
-from framework.models import Model
+import json
+from framework.models import Employees
+from app import app, api, db
+from flask_restful import Resource
+from flask import request, Response
+from utils.helpers import convert_list
 
-class Employee(Model):
-    table = 'employees'
 
-    def __init__(self, id, name, email, department_type, department_id):
-        self.id = id
-        self.name = name
-        self.email = email
-        self.department_type = department_type
-        self.department_id = department_id
-        print("Function init employees")
+# class EmployeesResource(Resource):
+#
+#     def get(self):
+#         employee = Employees.query.all()
+#         return convert_list(employee)
+#
+#     def post(self):
+#         data = request.json
+#         employee = Employees(name=data['name'],
+#                              email=data['email'],
+#                              department_type=data['department_type'],
+#                              department_id=int(data['department_id']))
+#         db.session.add(employee)
+#         db.session.commit()
+#         return employee.serialize
+#
+# api.add_resource('/employees', EmployeesResource)
 
-    def save(self):
-        cursor = self.connects()
-        sql = 'INSERT INTO employees(id, name, email, department_type, department_id) ' \
-              'VALUES ("%s", "%s", "%s", "%s", "%s")' % (str(self.id), self.name, self.email, self.department_type, str(self.department_id))
-        try:
-            cursor.execute(sql)
-            self.conn.commit()
-        except:
-            self.conn.rollback()
+class EmployeeSingleResource(Resource):
+    def get(self, id):
+        employee = Employees.query.all(id)
+        return employee.serialize
+
+    def delete(self, id):
+        employee = Employees.query.get(id)
+        db.session.delete(employee)
+        db.session.commit()
+        return "", 204
+
+
+
+

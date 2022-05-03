@@ -1,0 +1,71 @@
+.menu {
+	display: flex;
+    justify-content: space-evenly;
+}
+.menu a {
+	color: #E1E1E1;
+	background-color: #E10087;
+	padding: 15px;
+	margin: 15px;
+	border: solid;
+	border-color: #fff;
+	border-radius: 30px;
+	opacity: 0.5;
+	transition: all .07s ease-in-out;
+	box-shadow: 3px 3px 7px #000000;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 800;
+}
+.menu a:hover {
+	opacity: 1;
+	border-style: solid;
+}
+
+body {
+	background-image: url(img/1.jpg);
+}
+
+.lol {
+	padding: 3px;
+	margin: 3px;
+	border: hidden;
+	color: #fff;
+	border-width: 3px;
+	border-style: sloid;
+	border-color: #fff;
+	font-size: 15px;
+	background-color: ;
+	border-radius: 30px;
+	text-decoration: none;
+	opacity: 0.5;
+	box-shadow: 3px 3px 7px #000000;
+}
+
+.lol:hover {
+	opacity: 1;
+}
+
+.bord {
+	color: #fff;
+    display: inline-block;
+	text-decoration: none;
+	list-style-type: none;
+	font-family: Arial, sans-serif;
+	line-height: 20px;
+	padding: 8px;
+	margin: 8px;
+	border: solid;
+	border-width: 15%;
+	border-style: hidden;
+	border-color: #fff;
+	background-color: ;
+	border-radius: 15px;
+	text-decoration: none;
+	opacity: 0.8;
+	box-shadow: 3px 3px 7px #000000;
+
+}
+.bord:hover {
+	opacity: 1;
+}
